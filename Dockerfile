@@ -10,6 +10,9 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential xorg libss
 RUN wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox_0.12.5-1.bionic_amd64.deb
 RUN gdebi --n wkhtmltox_0.12.5-1.bionic_amd64.deb
 
+
+# Install fonts
+RUN apt-get install unzip
 RUN wget -O "Open Sans.zip" "https://www.fontsquirrel.com/fonts/download/open-sans" \ 
 	&& unzip -u "Open Sans.zip" -d /root/.fonts \
 	&& rm -f "Open Sans.zip" \
